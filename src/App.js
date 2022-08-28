@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Search from "./pages/Search";
-import Top from "./pages/Top";
-import Watch from "./pages/Watch";
+import Search from "./pages/Search.js";
+import Top from "./pages/Top.js";
+import Watch from "./pages/Watch.js";
 
 function App() {
   return (
