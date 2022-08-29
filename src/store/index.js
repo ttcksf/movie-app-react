@@ -2,6 +2,7 @@ import React, { createContext, useReducer } from "react";
 
 const initialState = {
   popular: [],
+  related: [],
   selected: {},
 };
 
@@ -11,7 +12,8 @@ const reducer = (state, action) => {
       return { ...state, popular: action.payload };
     case "SET_SELECTED":
       return { ...state, selected: action.payload };
-
+    case "SET_RELATED":
+      return { ...state, related: action.payload };
     default:
       return state;
   }

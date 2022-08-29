@@ -35,3 +35,12 @@ export const fetchSelectedData = async (id) => {
     },
   });
 };
+
+export const fetchRelatedData = async (id) => {
+  return await youtube.get(`/search?key=${KEY}`, {
+    params: {
+      ...params,
+      relatedToVideoId: id,
+    },
+  });
+};

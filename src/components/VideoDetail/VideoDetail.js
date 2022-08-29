@@ -15,13 +15,13 @@ const VideoDetail = () => {
     await fetchSelectedData(id).then((res) => {
       //res.data.itemsは配列になっているため、中のオブジェクトを取り出す（中身は1個しかないからshit()でOK）
       const item = res.data.items.shift();
-      console.log("item", item);
       setGlobalState({ type: "SET_SELECTED", payload: { selected: item } });
     });
   };
+  //動画の選択時にURLが切り替わるのでレンダリングするように第二引数にURLを設定
   useEffect(() => {
     setSelectedVideo();
-  }, []);
+  }, [location]);
   return globalState.selected.selected && globalState.selected.selected.id ? (
     <div className={Style.wrapper}>
       <VideoPlay id={globalState.selected.selected.id} />
