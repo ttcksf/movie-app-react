@@ -18,3 +18,20 @@ export const fetchPopularData = async () => {
     },
   });
 };
+
+const params = {
+  part: "snippet",
+  maxResults: 40,
+  regionCode: "jp",
+  type: "video",
+  order: "rating",
+};
+
+export const fetchSelectedData = async (id) => {
+  return await youtube.get(`/videos?key=${KEY}`, {
+    params: {
+      ...params,
+      id,
+    },
+  });
+};

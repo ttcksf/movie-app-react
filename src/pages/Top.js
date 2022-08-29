@@ -16,8 +16,6 @@ const Top = () => {
       });
     });
   }, []);
-  console.log("globalState: ");
-  console.log(globalState.popular.popular);
 
   return (
     <Layout>
