@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const VideoGridItem = ({ id, src, title }) => {
   return (
     <Link
-      to={{ pathname: "watch", search: `?v=${id.videoId}` }}
+      to={{ pathname: "/watch", search: `?v=${id.videoId}` }}
       className={Style.item}
     >
       <div>
