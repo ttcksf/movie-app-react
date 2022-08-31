@@ -40,7 +40,17 @@ export const fetchRelatedData = async (id) => {
   return await youtube.get(`/search?key=${KEY}`, {
     params: {
       ...params,
+      // relatedToVideoId: id,
       id,
+    },
+  });
+};
+
+export const fetchSearchData = async (query) => {
+  return await youtube.get(`/search?key=${KEY}`, {
+    params: {
+      ...params,
+      q: query,
     },
   });
 };
