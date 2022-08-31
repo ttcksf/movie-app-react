@@ -9,23 +9,23 @@ const Top = () => {
   const { globalState, setGlobalState } = useContext(Store);
 
   useEffect(() => {
-    // fetchPopularData().then((res) => {
-    //   setGlobalState({
-    //     type: "SET_POPULAR",
-    //     payload: { popular: res.data.items },
-    //   });
-    // });
+    fetchPopularData().then((res) => {
+      setGlobalState({
+        type: "SET_POPULAR",
+        payload: { popular: res.data.items },
+      });
+    });
   }, []);
 
   return (
     <Layout>
       <VideoGrid>
         {globalState.popular.popular &&
-          globalState.popular.popular.map((popular) => {
+          globalState.popular.popular.map((popular, index) => {
             return (
               <VideoGridItem
                 id={popular.id}
-                key={popular.id}
+                key={index}
                 src={popular.snippet.thumbnails.default.url}
                 title={popular.snippet.title}
               />

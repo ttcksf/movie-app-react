@@ -13,11 +13,13 @@ const Watch = () => {
     const searchParams = new URLSearchParams(location.search);
     const id = searchParams.get("v");
     if (id) {
+      console.log("id", id);
       //Promise.allでfetchSelectedData(動画の詳細表示)とfetchRelatedData(関連動画の表示)の両方が終わるまで待機するようにする。遅延対策。
       const [selected, related] = await Promise.all([
         fetchSelectedData(id),
         fetchRelatedData(id),
       ]);
+
       setGlobalState({
         type: "SET_SELECTED",
         //res.data.itemsは配列になっているため、中のオブジェクトを取り出す（中身は1個しかないからshit()でOK）
@@ -30,7 +32,7 @@ const Watch = () => {
     }
   };
   useEffect(() => {
-    // setVideos();
+    setVideos();
   }, [location.search]);
   return (
     <Layout>

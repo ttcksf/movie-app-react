@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Store } from "../../store";
+import { Store } from "../../store/index";
 import Style from "./SideList.module.scss";
 import SideListItem from "../SideListItem/SideListItem";
 
